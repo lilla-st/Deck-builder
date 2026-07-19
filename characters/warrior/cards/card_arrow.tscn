@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dr2c0bpe6hmlt"]
+
+[sub_resource type="Curve" id="Curve_8krf8"]
+_data = [Vector2(0, 0), 0.0, 1.4, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="CardArrow" type="Line2D" unique_id=1139979298]
+points = PackedVector2Array(35, 106, 181, 45)
+width_curve = SubResource("Curve_8krf8")

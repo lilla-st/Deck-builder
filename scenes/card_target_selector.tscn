@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://2l63206qhc0c"]
+
+[ext_resource type="Script" uid="uid://l61f5df8ps4v" path="res://scenes/card_target_selector.gd" id="1_c07u4"]
+[ext_resource type="PackedScene" uid="uid://dr2c0bpe6hmlt" path="res://characters/warrior/cards/card_arrow.tscn" id="2_4nd48"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iigc7"]
+size = Vector2(4, 4)
+
+[node name="card_target_selector" type="Node2D" unique_id=1277973904]
+script = ExtResource("1_c07u4")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=631989802]
+collision_mask = 4
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1298017675]
+shape = SubResource("RectangleShape2D_iigc7")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1388178283]
+layer = 2
+
+[node name="CardArrow" parent="CanvasLayer" unique_id=1139979298 instance=ExtResource("2_4nd48")]
+points = PackedVector2Array(36, 107, 36, 107)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
