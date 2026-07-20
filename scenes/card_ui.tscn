@@ -2,7 +2,9 @@
 
 [ext_resource type="Theme" uid="uid://cfvox1slj653" path="res://main_theme.tres" id="1_wkukd"]
 [ext_resource type="Script" uid="uid://4skboou46b6f" path="res://scenes/card_ui.gd" id="2_8mkvy"]
+[ext_resource type="StyleBox" uid="uid://b2fskhiy7s4g7" path="res://scenes/ui/cardstyleboxbasic.tres" id="3_gf8qa"]
 [ext_resource type="Script" uid="uid://bffckjamc42jf" path="res://scenes/card_state_machine.gd" id="3_uwnlh"]
+[ext_resource type="Texture2D" uid="uid://bfvi02kojsa00" path="res://art/tile_0103.png" id="4_cgy8f"]
 [ext_resource type="Script" uid="uid://gkxuwijn5ysy" path="res://scenes/card_states/card_base_state.gd" id="4_yd5cp"]
 [ext_resource type="Script" uid="uid://bto5q73fx0ge3" path="res://scenes/card_states/card_clicked_state.gd" id="5_aawrk"]
 [ext_resource type="Script" uid="uid://6i62q2nl1sy5" path="res://scenes/card_states/card_dragging_state.gd" id="6_wnvti"]
@@ -27,7 +29,7 @@ grow_vertical = 2
 theme = ExtResource("1_wkukd")
 script = ExtResource("2_8mkvy")
 
-[node name="Color" type="ColorRect" parent="." unique_id=955103818]
+[node name="Panel" type="Panel" parent="." unique_id=1485447049]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -35,16 +37,33 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-color = Color(0.305882, 0.156863, 0.407843, 1)
+theme_override_styles/panel = ExtResource("3_gf8qa")
 
-[node name="State" type="Label" parent="." unique_id=884158208]
+[node name="Icon" type="TextureRect" parent="." unique_id=1101417705]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7.5
+offset_top = -7.5
+offset_right = 7.5
+offset_bottom = 7.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "state"
+mouse_filter = 2
+texture = ExtResource("4_cgy8f")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Cost" type="Label" parent="." unique_id=1476707861]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 11.0
+offset_bottom = 11.0
+text = "2"
 horizontal_alignment = 1
 vertical_alignment = 1
 
