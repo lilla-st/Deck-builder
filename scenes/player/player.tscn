@@ -3,9 +3,17 @@
 [ext_resource type="Texture2D" uid="uid://bue8imscpldys" path="res://art/tile_0097.png" id="1_dovo2"]
 [ext_resource type="Script" uid="uid://tsck75mw6ycv" path="res://scenes/player/player.gd" id="1_gmlin"]
 [ext_resource type="PackedScene" uid="uid://bag2nuyexyfdr" path="res://scenes/ui/stats_ui.tscn" id="2_gmlin"]
+[ext_resource type="Script" uid="uid://dpx1tsc4d8y1n" path="res://custom_resources/character_stats.gd" id="2_p47bc"]
+[ext_resource type="Resource" uid="uid://bychvww0s3u1m" path="res://characters/warrior/warrior_starting_deck.tres" id="3_75vfm"]
+
+[sub_resource type="Resource" id="Resource_yahae"]
+script = ExtResource("2_p47bc")
+starting_deck = ExtResource("3_75vfm")
+metadata/_custom_type_script = "uid://dpx1tsc4d8y1n"
 
 [node name="Player" type="Node2D" unique_id=2136936779 groups=["player"]]
 script = ExtResource("1_gmlin")
+stats = SubResource("Resource_yahae")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=895331999]
 texture = ExtResource("1_dovo2")
