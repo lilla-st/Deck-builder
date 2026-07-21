@@ -4,21 +4,56 @@
 [ext_resource type="Script" uid="uid://yhrktjimuvhn" path="res://scenes/ui/mana_ui.gd" id="2_jwxui"]
 
 [node name="ManaUI" type="Panel" unique_id=559565638]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 7.0
-offset_top = -25.0
-offset_right = 25.0
-offset_bottom = -7.0
-grow_vertical = 0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -50.0
+offset_right = 50.0
+offset_bottom = 18.0
+grow_horizontal = 2
 theme = ExtResource("1_rpnp3")
 script = ExtResource("2_jwxui")
 
-[node name="ManaLabel" type="Label" parent="." unique_id=306126269]
+[node name="AquamLabel" type="Label" parent="." unique_id=306126269]
 layout_mode = 0
 offset_right = 18.0
 offset_bottom = 18.0
-text = "3/3"
+text = "placeholder"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AuramLabel" type="Label" parent="." unique_id=1402053316]
+layout_mode = 0
+offset_left = 10.0
+offset_right = 50.0
+offset_bottom = 18.0
+text = "placeholder"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CorpusLabel" type="Label" parent="." unique_id=1451638793]
+layout_mode = 0
+offset_left = 30.0
+offset_right = 70.0
+offset_bottom = 18.0
+text = "placeholder"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="IgnemLabel" type="Label" parent="." unique_id=1222920989]
+layout_mode = 0
+offset_left = 50.0
+offset_right = 90.0
+offset_bottom = 18.0
+text = "placeholder"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TerramLabel" type="Label" parent="." unique_id=1749712149]
+layout_mode = 0
+offset_left = 70.0
+offset_right = 110.0
+offset_bottom = 18.0
+text = "placeholder"
 horizontal_alignment = 1
 vertical_alignment = 1
