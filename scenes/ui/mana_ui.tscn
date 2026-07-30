@@ -7,53 +7,72 @@
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -50.0
-offset_right = 50.0
-offset_bottom = 18.0
+offset_left = -111.0
+offset_right = 109.0
+offset_bottom = 17.0
 grow_horizontal = 2
 theme = ExtResource("1_rpnp3")
 script = ExtResource("2_jwxui")
 
-[node name="AquamLabel" type="Label" parent="." unique_id=306126269]
+[node name="ManaBoxes" type="HBoxContainer" parent="." unique_id=537528509]
 layout_mode = 0
-offset_right = 18.0
-offset_bottom = 18.0
+offset_top = 1.0
+offset_right = 220.0
+offset_bottom = 16.0
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="AquamBox" type="PanelContainer" parent="ManaBoxes" unique_id=1784501295]
+modulate = Color(0.19215687, 1, 1, 1)
+layout_mode = 2
+
+[node name="AquamLabel" type="Label" parent="ManaBoxes/AquamBox" unique_id=534352290]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
 text = "placeholder"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="AuramLabel" type="Label" parent="." unique_id=1402053316]
-layout_mode = 0
-offset_left = 10.0
-offset_right = 50.0
-offset_bottom = 18.0
+[node name="AuramBox" type="PanelContainer" parent="ManaBoxes" unique_id=505211927]
+modulate = Color(0.80049086, 0.80049074, 0.80049074, 1)
+layout_mode = 2
+
+[node name="AuramLabel" type="Label" parent="ManaBoxes/AuramBox" unique_id=1181749154]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
 text = "placeholder"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CorpusLabel" type="Label" parent="." unique_id=1451638793]
-layout_mode = 0
-offset_left = 30.0
-offset_right = 70.0
-offset_bottom = 18.0
+[node name="CorpusBox" type="PanelContainer" parent="ManaBoxes" unique_id=298778861]
+modulate = Color(0.7023344, 0.45984066, 0.95179063, 1)
+layout_mode = 2
+
+[node name="CorpusLabel" type="Label" parent="ManaBoxes/CorpusBox" unique_id=1040145789]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
 text = "placeholder"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="IgnemLabel" type="Label" parent="." unique_id=1222920989]
-layout_mode = 0
-offset_left = 50.0
-offset_right = 90.0
-offset_bottom = 18.0
+[node name="IgnemBox" type="PanelContainer" parent="ManaBoxes" unique_id=642586517]
+modulate = Color(0.987704, 0.52680326, 0.46856272, 1)
+layout_mode = 2
+
+[node name="IgnemLabel" type="Label" parent="ManaBoxes/IgnemBox" unique_id=230050182]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
 text = "placeholder"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TerramLabel" type="Label" parent="." unique_id=1749712149]
-layout_mode = 0
-offset_left = 70.0
-offset_right = 110.0
-offset_bottom = 18.0
+[node name="TerramBox" type="PanelContainer" parent="ManaBoxes" unique_id=1196113496]
+modulate = Color(0.48812073, 0.882009, 1.92523e-06, 1)
+layout_mode = 2
+
+[node name="TerramLabel" type="Label" parent="ManaBoxes/TerramBox" unique_id=184266693]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
 text = "placeholder"
 horizontal_alignment = 1
 vertical_alignment = 1
