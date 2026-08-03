@@ -12,7 +12,7 @@ extends Panel
 #@onready var mentem_label: Label = $ManaBoxes/MentemBox/MentemLabel
 
 func _ready() -> void:
-	char_stats.aquam = char_stats.max_aquam
+	char_stats.aquam = char_stats.max_aquam # temp reset mana at end of each day/night/round
 
 func _set_char_stats(value: CharacterStats) -> void:
 	char_stats = value

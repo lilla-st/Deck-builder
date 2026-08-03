@@ -61,14 +61,17 @@ script = ExtResource("2_p1qf1")
 [node name="CardUI" parent="BattleUI/Hand" unique_id=1194682912 instance=ExtResource("2_q8q6c")]
 layout_mode = 2
 card = ExtResource("4_lpir7")
+char_stats = ExtResource("4_v7i3o")
 
 [node name="CardUI2" parent="BattleUI/Hand" unique_id=475800620 instance=ExtResource("2_q8q6c")]
 layout_mode = 2
 card = ExtResource("5_6vh42")
+char_stats = ExtResource("4_v7i3o")
 
 [node name="CardUI3" parent="BattleUI/Hand" unique_id=324600072 instance=ExtResource("2_q8q6c")]
 layout_mode = 2
 card = ExtResource("5_6vh42")
+char_stats = ExtResource("4_v7i3o")
 
 [node name="ManaUI" parent="BattleUI" unique_id=559565638 instance=ExtResource("11_66ngm")]
 char_stats = ExtResource("4_v7i3o")
