@@ -2,8 +2,24 @@
 
 [ext_resource type="FontFile" uid="uid://dskmdk146n4rq" path="res://art/pixel_rpg.ttf" id="1_0tmdw"]
 [ext_resource type="StyleBox" uid="uid://b2fskhiy7s4g7" path="res://scenes/ui/cardstyleboxbasic.tres" id="1_a2l2q"]
+[ext_resource type="StyleBox" uid="uid://bs67qgad7r4bq" path="res://scenes/ui/cardhover.tres" id="2_0omi4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0omi4"]
+bg_color = Color(0.6, 0.6431373, 0.48235294, 0.38039216)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.5890956, 0.58909565, 0.5890954, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a2l2q"]
 
 [resource]
 default_font = ExtResource("1_0tmdw")
 default_font_size = 6
+Button/styles/disabled = SubResource("StyleBoxFlat_0omi4")
+Button/styles/focus = SubResource("StyleBoxEmpty_a2l2q")
+Button/styles/hover = ExtResource("2_0omi4")
+Button/styles/normal = ExtResource("1_a2l2q")
+Button/styles/pressed = null
 Panel/styles/panel = ExtResource("1_a2l2q")

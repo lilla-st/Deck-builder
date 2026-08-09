@@ -2,16 +2,11 @@
 
 [ext_resource type="Script" uid="uid://dpx1tsc4d8y1n" path="res://custom_resources/character_stats.gd" id="1_nliw2"]
 [ext_resource type="Texture2D" uid="uid://bue8imscpldys" path="res://art/tile_0097.png" id="1_uanm1"]
-[ext_resource type="Script" uid="uid://eug0ki23cfbu" path="res://custom_resources/card.gd" id="3_wgifn"]
-[ext_resource type="Script" uid="uid://oc1kexiugg24" path="res://custom_resources/card_pile.gd" id="4_6x0nb"]
-
-[sub_resource type="Resource" id="Resource_0owmy"]
-script = ExtResource("4_6x0nb")
-metadata/_custom_type_script = "uid://oc1kexiugg24"
+[ext_resource type="Resource" uid="uid://bychvww0s3u1m" path="res://characters/warrior/warrior_starting_deck.tres" id="5_deck"]
 
 [resource]
 script = ExtResource("1_nliw2")
-starting_deck = SubResource("Resource_0owmy")
+starting_deck = ExtResource("5_deck")
 cards_per_turn = 5
 max_aquam = 1
 max_auram = 1
