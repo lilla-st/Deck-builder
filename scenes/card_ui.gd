@@ -6,6 +6,7 @@ signal reparent_requested(which_card_ui: CardUI)
 const BASE_STYLEBOX :=preload("res://scenes/ui/cardstyleboxbasic.tres")
 const HOVER_STYLEBOX :=preload("res://scenes/ui/cardhover.tres")
 const DRAG_STYLEBOX :=preload("res://scenes/ui/carddragging.tres")
+const DISCARD_MARKED_MODULATE := Color(1, 0.4, 0.4)
 
 @export var card: Card : set = _set_card
 @export var char_stats: CharacterStats : set = _set_char_stats
@@ -22,6 +23,8 @@ var parent: Control
 var tween: Tween 
 var playable := true : set = _set_playable
 var disabled := false
+var in_discard_selection := false
+var marked_for_discard := false : set = _set_marked_for_discard
 
 func _ready() -> void:
 	card_state_machine.init(self)
@@ -44,6 +47,11 @@ func play() -> void:
 	queue_free()
 	
 func _on_gui_input(event: InputEvent) -> void:
+	if in_discard_selection:
+		if event.is_action_pressed("left_mouse"):
+			marked_for_discard = not marked_for_discard
+		return
+	
 	card_state_machine.on_gui_input(event)
 	
 func _on_mouse_entered() -> void:
@@ -69,6 +77,10 @@ func _set_playable(value: bool) -> void:
 func _set_char_stats(value: CharacterStats) -> void:
 	char_stats = value
 	char_stats.stats_changed.connect(_on_char_stats_changed)
+	
+func _set_marked_for_discard(value: bool) -> void:
+	marked_for_discard = value
+	modulate = DISCARD_MARKED_MODULATE if value else Color.WHITE
 		
 func _on_drop_point_detector_area_entered(area: Area2D) -> void:
 	if not targets.has(area):

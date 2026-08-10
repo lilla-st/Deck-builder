@@ -22,7 +22,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Events="*uid://cpf4cofltckx2"
-_mcp_game_helper="*res://addons/godot_ai/runtime/game_helper.gd"
+MCPRuntimeServer="*res://addons/godot_mcp_toolkit/runtime/mcp_runtime_server.gd"
 
 [display]
 
@@ -34,7 +34,7 @@ window/stretch/mode="viewport"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/godot_ai/plugin.cfg", "res://addons/hex_strategy_map/plugin.cfg")
+enabled=PackedStringArray("res://addons/godot_mcp_toolkit/plugin.cfg", "res://addons/hex_strategy_map/plugin.cfg")
 
 [input]
 
@@ -54,6 +54,10 @@ right_mouse={
 2d_physics/layer_1="card_target_selector"
 2d_physics/layer_2="card_drop_area"
 2d_physics/layer_3="Enemies"
+
+[mcp_toolkit]
+
+status="No .mcp.json found — use Project > Tools > MCP Toolkit > Write .mcp.json to create one."
 
 [rendering]
 

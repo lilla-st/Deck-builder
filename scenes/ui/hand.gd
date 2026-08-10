@@ -28,6 +28,25 @@ func discard_card(card: CardUI) -> void:
 func disable_hand() -> void:
 	for card in get_children():
 		card.disabled = true
+
+func begin_discard_selection() -> void:
+	for card in get_children():
+		card.in_discard_selection = true
+
+func end_discard_selection() -> void:
+	# skips cards marked for discard: they're about to be freed by
+	# discard_marked_cards() and should keep their tint until then
+	for card in get_children():
+		if card.marked_for_discard:
+			continue
+		card.in_discard_selection = false
+
+func get_marked_for_discard() -> Array[CardUI]:
+	var marked: Array[CardUI] = []
+	for card in get_children():
+		if card.marked_for_discard:
+			marked.append(card)
+	return marked
 		
 func _on_card_ui_reparent_requested(child: CardUI) -> void:
 	child.disabled = true
