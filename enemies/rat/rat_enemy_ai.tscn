@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cjiglwwi7r1fe"]
+
+[ext_resource type="Script" uid="uid://swboivagwf0n" path="res://enemies/enemy_action_picker.gd" id="1_4i1dd"]
+[ext_resource type="Script" uid="uid://bosueus1chibx" path="res://enemies/rat/rat_attack_action.gd" id="2_ihkdm"]
+
+[node name="RatEnemyAI" type="Node" unique_id=46772316]
+script = ExtResource("1_4i1dd")
+
+[node name="AttackAction" type="Node" parent="." unique_id=1323976237]
+script = ExtResource("2_ihkdm")
+
+[node name="BlockAction" type="Node" parent="." unique_id=1727505863]
+
+[node name="MegaBlockAction" type="Node" parent="." unique_id=1321232578]

@@ -55,10 +55,6 @@ right_mouse={
 2d_physics/layer_2="card_drop_area"
 2d_physics/layer_3="Enemies"
 
-[mcp_toolkit]
-
-status="No .mcp.json found — use Project > Tools > MCP Toolkit > Write .mcp.json to create one."
-
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0

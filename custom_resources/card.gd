@@ -34,7 +34,7 @@ func _get_targets(targets: Array[Node]) -> Array[Node]:
 		_:
 			return[]
 func play(targets: Array[Node], char_stats: CharacterStats) -> void:
-	Events.card_aim_started.emit(self)
+	Events.card_played.emit(self)
 	char_stats.aquam # either make a generic solution or make one for all mana
 	
 	if is_single_targeted():

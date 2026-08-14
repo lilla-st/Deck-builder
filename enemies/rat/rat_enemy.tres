@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="EnemyStats" format=3 uid="uid://brocmo0coprgf"]
+
+[ext_resource type="Script" uid="uid://babcpff48fbvk" path="res://custom_resources/enemy_stats.gd" id="1_0wxba"]
+[ext_resource type="Texture2D" uid="uid://d2vujk8wvu6ia" path="res://art/tile_0123.png" id="1_3g1op"]
+[ext_resource type="PackedScene" uid="uid://cjiglwwi7r1fe" path="res://enemies/rat/rat_enemy_ai.tscn" id="1_peiwi"]
+
+[resource]
+script = ExtResource("1_0wxba")
+ai = ExtResource("1_peiwi")
+max_health = 4
+art = ExtResource("1_3g1op")
+metadata/_custom_type_script = "uid://babcpff48fbvk"

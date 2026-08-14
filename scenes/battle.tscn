@@ -5,9 +5,10 @@
 [ext_resource type="Script" uid="uid://bxjb7kveurj0k" path="res://scenes/ui/hand.gd" id="2_p1qf1"]
 [ext_resource type="PackedScene" uid="uid://boxd06bs072ot" path="res://scenes/enemy/enemy.tscn" id="2_yahae"]
 [ext_resource type="PackedScene" uid="uid://2l63206qhc0c" path="res://scenes/card_target_selector.tscn" id="3_4k1nj"]
-[ext_resource type="Resource" uid="uid://des7ufghp6btr" path="res://enemies/rat/rat_test.tres" id="3_v7i3o"]
 [ext_resource type="PackedScene" uid="uid://scaj3ai0w1q5" path="res://scenes/player/player.tscn" id="3_yahae"]
+[ext_resource type="Script" uid="uid://d0pjumyd1jfqx" path="res://scenes/enemy/enemy_handler.gd" id="4_22uqi"]
 [ext_resource type="Resource" uid="uid://bnqllhllv5nt3" path="res://characters/warrior/warrior.tres" id="4_v7i3o"]
+[ext_resource type="Resource" uid="uid://brocmo0coprgf" path="res://enemies/rat/rat_enemy.tres" id="5_03edq"]
 [ext_resource type="Script" uid="uid://dbm0sxlly8opx" path="res://scenes/ui/battle_ui.gd" id="7_03edq"]
 [ext_resource type="Script" uid="uid://d0fq7oolklwua" path="res://scenes/player/player_handler.gd" id="8_66ngm"]
 [ext_resource type="PackedScene" uid="uid://b60f30g8yopyw" path="res://scenes/ui/mana_ui.tscn" id="11_66ngm"]
@@ -35,9 +36,13 @@ position = Vector2(128, 50)
 shape = SubResource("RectangleShape2D_8pxvv")
 debug_color = Color(0.55196357, 0.9109338, 0.9999997, 0.41960785)
 
-[node name="Enemy" parent="." unique_id=119410247 instance=ExtResource("2_yahae")]
-position = Vector2(223, 73)
-stats = ExtResource("3_v7i3o")
+[node name="EnemyHandler" type="Node2D" parent="." unique_id=1643509357]
+position = Vector2(49, 72)
+script = ExtResource("4_22uqi")
+
+[node name="Enemy" parent="EnemyHandler" unique_id=119410247 instance=ExtResource("2_yahae")]
+position = Vector2(174, 1)
+stats = ExtResource("5_03edq")
 
 [node name="Player" parent="." unique_id=2136936779 instance=ExtResource("3_yahae")]
 position = Vector2(49, 72)
@@ -84,3 +89,5 @@ grow_horizontal = 0
 grow_vertical = 0
 theme = ExtResource("12_03edq")
 text = "End Turn"
+
+[connection signal="child_order_changed" from="EnemyHandler" to="." method="_on_enemy_handler_child_order_changed"]
