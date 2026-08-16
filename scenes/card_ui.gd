@@ -48,7 +48,7 @@ func play() -> void:
 	
 func _on_gui_input(event: InputEvent) -> void:
 	if in_discard_selection:
-		if event.is_action_pressed("left_mouse"):
+		if card.is_discardable() and event.is_action_pressed("left_mouse"):
 			marked_for_discard = not marked_for_discard
 		return
 	
@@ -66,6 +66,7 @@ func _set_card(value: Card) -> void:
 	
 	card = value
 	cost.text = str(card.cost)
+	cost.visible = card.is_playable()
 	icon.texture = card.icon
 
 func _set_playable(value: bool) -> void:
@@ -97,8 +98,8 @@ func _on_card_drag_or_aiming_started(used_card: CardUI) -> void:
 	
 func _on_card_drag_or_aiming_ended(_card: CardUI) -> void:
 	disabled = false
-	self.playable = char_stats.can_play_card(card)
+	self.playable = card.is_playable() and char_stats.can_play_card(card)
 
 func _on_char_stats_changed() -> void:
-	self.playable = char_stats.can_play_card(card)
+	self.playable = card.is_playable() and char_stats.can_play_card(card)
 	

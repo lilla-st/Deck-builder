@@ -17,13 +17,14 @@ func set_block(value: int) -> void:
 	block = clampi(value, 0, 999)
 	stats_changed.emit()
 	
-func take_damage(damage : int) -> void:
+func take_damage(damage : int) -> int:
 	if damage <=0:
-		return
+		return 0
 	var initial_damage = damage
 	damage = clampi(damage - block, 0, damage) #change "damage" to 1 for MK logic
 	self.block = clampi(block - initial_damage, 0, block)
 	self.health -= damage
+	return damage
 	
 func heal(amount : int) -> void:
 	self.health += amount

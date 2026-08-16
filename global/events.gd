@@ -15,6 +15,7 @@ signal player_hand_discarded
 signal player_turn_ended
 signal discard_confirmed
 signal player_died
+signal player_took_unblocked_damage(amount: int)
 
 #enemy events
 signal enemy_action_completed(enemy: Enemy)

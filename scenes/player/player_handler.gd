@@ -3,6 +3,7 @@ extends Node
 
 const HAND_DRAW_INTERVAL := 0.25
 const HAND_DISCARD_INTERVAL := 0.25
+const WOUND_CARD := preload("res://characters/warrior/cards/wound.tres")
 
 @export var hand: Hand
 
@@ -22,6 +23,10 @@ func start_turn() -> void:
 	
 func end_turn() -> void:
 	hand.begin_discard_selection()
+
+func add_wounds(amount: int) -> void:
+	for i in range(amount):
+		hand.add_card(WOUND_CARD.duplicate())
 	
 func confirm_discard() -> void:
 	discard_marked_cards()
@@ -46,26 +51,35 @@ func draw_cards(amount: int) -> void:
 	)
 
 func discard_marked_cards() -> void:
-	var marked := hand.get_marked_for_discard()
-	if marked.is_empty():
+	var to_discard := hand.get_marked_for_discard()
+	var round_ended := character.draw_pile.empty() and not hand.has_playable_cards(to_discard)
+	if round_ended:
+		to_discard.append_array(hand.get_undiscardable_cards())
+
+	if to_discard.is_empty():
+		if round_ended:
+			reshuffle_deck_from_discard()
 		Events.player_hand_discarded.emit()
 		return
 
 	var tween := create_tween()
-	for card_ui in marked:
+	for card_ui in to_discard:
 		tween.tween_callback(character.discard.add_card.bind(card_ui.card))
 		tween.tween_callback(hand.discard_card.bind(card_ui))
 		tween.tween_interval(HAND_DISCARD_INTERVAL)
 
 	tween.finished.connect(
-		func(): Events.player_hand_discarded.emit()
+		func():
+			if round_ended:
+				reshuffle_deck_from_discard()
+			Events.player_hand_discarded.emit()
 	)
 
 func reshuffle_deck_from_discard() -> void:
 	if not character.draw_pile.empty():
 		return
-		
+
 	while not character.discard.empty():
 		character.draw_pile.add_card(character.discard.draw_card())
-	
+
 	character.draw_pile.shuffle()

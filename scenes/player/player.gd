@@ -29,9 +29,12 @@ func update_stats() -> void:
 func take_damage(damage: int) -> void:
 	if stats.health <= 0:
 		return
-		
-	stats.take_damage(damage)
-	
+
+	var unblocked_damage := stats.take_damage(damage)
+
+	if unblocked_damage > 0:
+		Events.player_took_unblocked_damage.emit(unblocked_damage)
+
 	if stats.health <= 0:
 		Events.player_died.emit()
 		queue_free()

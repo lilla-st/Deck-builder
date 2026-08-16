@@ -21,6 +21,7 @@ func _ready() -> void:
 	Events.discard_confirmed.connect(player_handler.confirm_discard)
 	Events.player_hand_discarded.connect(enemy_handler.start_turn)
 	Events.player_died.connect(_on_player_died)
+	Events.player_took_unblocked_damage.connect(player_handler.add_wounds)
 	
 	start_battle(new_stats)
 	
