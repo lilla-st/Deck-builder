@@ -44,6 +44,11 @@ func end_discard_selection() -> void:
 			continue
 		card.in_discard_selection = false
 
+func cancel_discard_selection() -> void:
+	for card in get_children():
+		card.marked_for_discard = false
+		card.in_discard_selection = false
+
 func get_marked_for_discard() -> Array[CardUI]:
 	var marked: Array[CardUI] = []
 	for card in get_children():

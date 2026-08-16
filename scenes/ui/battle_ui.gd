@@ -15,6 +15,12 @@ func _ready() -> void:
 	end_turn_button.mouse_entered.connect(_on_end_turn_button_mouse_entered)
 	end_turn_button.mouse_exited.connect(_on_end_turn_button_mouse_exited)
 
+func _input(event: InputEvent) -> void:
+	if awaiting_discard_confirm and event.is_action_pressed("right_mouse"):
+		awaiting_discard_confirm = false
+		end_turn_button.text = "End Turn"
+		hand.cancel_discard_selection()
+
 func _set_char_stats(value: CharacterStats) -> void:
 	char_stats = value
 	mana_ui.char_stats = char_stats
