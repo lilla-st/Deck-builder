@@ -1,7 +1,7 @@
 class_name Card
 extends Resource
 
-enum Type {ATTACK, DEFEND, POWER}
+enum Type {ATTACK, DEFEND, POWER, STATUS}
 enum Target {SELF, SINGLE_ENEMY, ALL_ENEMIES, EVERYONE}
 
 @export_group("Card Attributes")

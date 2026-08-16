@@ -1,12 +1,7 @@
-[gd_resource type="Resource" format=3 uid="uid://7xxdnbu07p2x"]
+[gd_resource type="Resource" script_class="Card" format=3 uid="uid://7xxdnbu07p2x"]
 
-[ext_resource type="Texture2D" uid="uid://d0edy7thj8ce6" path="res://art/heart.png" id="1_36jat"]
-[ext_resource type="Script" uid="uid://debwxepq2skfj" path="res://characters/warrior/cards/warrior_axe_attack.gd" id="2_era2h"]
+[ext_resource type="Script" uid="uid://eug0ki23cfbu" path="res://custom_resources/card.gd" id="1_el6mn"]
 
 [resource]
-script = ExtResource("2_era2h")
-id = "warrior_axe_attack"
-target = 1
-icon = ExtResource("1_36jat")
-tooltip_text = "axe attack tooltip"
+script = ExtResource("1_el6mn")
 metadata/_custom_type_script = "uid://eug0ki23cfbu"
