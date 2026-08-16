@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("2_ungqh")
 id = "warrior_axe_attack"
-target = 1
+type = 2
 icon = ExtResource("1_ungqh")
 tooltip_text = "axe attack tooltip"
 metadata/_custom_type_script = "uid://eug0ki23cfbu"
