@@ -17,8 +17,8 @@ const DISCARD_MARKED_MODULATE := Color(1, 0.4, 0.4)
 @onready var drop_point_detector: Area2D = $DropPointDetector
 @onready var card_state_machine: CardStateMachine = $CardStateMachine as CardStateMachine
 @onready var targets: Array[Node] = []
-@onready var original_index := self.get_index()
 
+var original_index := 0
 var parent: Control
 var tween: Tween 
 var playable := true : set = _set_playable

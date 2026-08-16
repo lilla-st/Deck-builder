@@ -2,12 +2,21 @@
 
 [ext_resource type="Script" uid="uid://swboivagwf0n" path="res://enemies/enemy_action_picker.gd" id="1_4i1dd"]
 [ext_resource type="Script" uid="uid://bosueus1chibx" path="res://enemies/rat/rat_attack_action.gd" id="2_ihkdm"]
+[ext_resource type="Texture2D" uid="uid://bfvi02kojsa00" path="res://art/tile_0103.png" id="3_8h8m6"]
+[ext_resource type="Script" uid="uid://cf35ve7av1kvl" path="res://custom_resources/intent.gd" id="4_sgp6l"]
+
+[sub_resource type="Resource" id="Resource_22uqi"]
+script = ExtResource("4_sgp6l")
+number = "2"
+icon = ExtResource("3_8h8m6")
+metadata/_custom_type_script = "uid://cf35ve7av1kvl"
 
 [node name="RatEnemyAI" type="Node" unique_id=46772316]
 script = ExtResource("1_4i1dd")
 
 [node name="AttackAction" type="Node" parent="." unique_id=1323976237]
 script = ExtResource("2_ihkdm")
+intent = SubResource("Resource_22uqi")
 
 [node name="BlockAction" type="Node" parent="." unique_id=1727505863]
 

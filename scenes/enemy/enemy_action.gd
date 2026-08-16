@@ -1,6 +1,8 @@
 class_name EnemyAction
 extends Node
 
+@export var intent: Intent
+
 var enemy: Enemy
 var target: Node2D
 
