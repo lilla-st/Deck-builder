@@ -30,12 +30,19 @@ func take_damage(damage: int) -> void:
 	if stats.health <= 0:
 		return
 
+	var tween := create_tween()
+	tween.tween_callback(Shaker.shake.bind(self, 16, 0.15))
+	tween.tween_callback(stats.take_damage.bind(damage))
+	tween.tween_interval(0.17)
+	
 	var unblocked_damage := stats.take_damage(damage)
 
 	if unblocked_damage > 0:
 		Events.player_took_unblocked_damage.emit(unblocked_damage)
-
-	if stats.health <= 0:
-		Events.player_died.emit()
-		queue_free()
-		
+	
+	tween.finished.connect(
+		func():			
+			if stats.health <= 0:
+				Events.player_died.emit()
+				queue_free()
+	)

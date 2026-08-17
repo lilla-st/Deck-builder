@@ -23,6 +23,7 @@ config/icon="res://icon.png"
 
 Events="*uid://cpf4cofltckx2"
 MCPRuntimeServer="*res://addons/godot_mcp_toolkit/runtime/mcp_runtime_server.gd"
+Shaker="*uid://wkffq53wqxna"
 
 [display]
 
