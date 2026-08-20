@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("2_5nea4")
-id = "warrior_block"
-type = 1
+id = "warrior_move"
+type = 3
 icon = ExtResource("1_5nea4")
 metadata/_custom_type_script = "uid://eug0ki23cfbu"
