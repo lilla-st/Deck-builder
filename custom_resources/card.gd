@@ -3,12 +3,16 @@ extends Resource
 
 enum Type {ATTACK, DEFEND, POWER, STATUS, OVERWORLD}
 enum Target {SELF, SINGLE_ENEMY, ALL_ENEMIES, EVERYONE}
+enum ManaType {AQUAM, AURAM, CORPUS, IGNEM, TERRAM}
 
 @export_group("Card Attributes")
 @export var id: String
 @export var type: Type
 @export var target: Target
 @export var cost: int
+@export var cost_type: ManaType = ManaType.AQUAM
+@export var advanced_cost: ManaCost
+
 
 @export_group("Card Visuals")
 @export var icon: Texture
@@ -41,8 +45,8 @@ func _get_targets(targets: Array[Node]) -> Array[Node]:
 			return[]
 func play(targets: Array[Node], char_stats: CharacterStats) -> void:
 	Events.card_played.emit(self)
-	char_stats.aquam # either make a generic solution or make one for all mana
-	
+	char_stats.pay_cost(self)
+
 	if is_single_targeted():
 		apply_effects(targets)
 	else:

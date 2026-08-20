@@ -1,11 +1,15 @@
 [gd_resource type="Resource" format=3 uid="uid://dwkuu66s8hsx7"]
 
-[ext_resource type="Texture2D" uid="uid://oe7v35ii8vrs" path="res://art/tile_0102.png" id="1_omaob"]
-[ext_resource type="Script" uid="uid://dwy2io8lf5e8x" path="res://characters/warrior/cards/warrior_block.gd" id="2_1swql"]
+[ext_resource type="Script" uid="uid://cdroe1wq1hkf6" path="res://characters/warrior/cards/warrior_move.gd" id="1_2e341"]
+[ext_resource type="Texture2D" uid="uid://buvhcnxp1orn2" path="res://art/Shikashi's Fantasy Icons Pack v2/#1 - Transparent Icons.png" id="1_omaob"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgy8f"]
+atlas = ExtResource("1_omaob")
+region = Rect2(64, 256, 32, 32)
 
 [resource]
-script = ExtResource("2_1swql")
-id = "warrior_block"
+script = ExtResource("1_2e341")
+id = "warrior_move"
 type = 1
-icon = ExtResource("1_omaob")
+icon = SubResource("AtlasTexture_cgy8f")
 metadata/_custom_type_script = "uid://eug0ki23cfbu"
