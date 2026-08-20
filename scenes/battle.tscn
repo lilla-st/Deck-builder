@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://d0fq7oolklwua" path="res://scenes/player/player_handler.gd" id="8_66ngm"]
 [ext_resource type="PackedScene" uid="uid://b60f30g8yopyw" path="res://scenes/ui/mana_ui.tscn" id="11_66ngm"]
 [ext_resource type="Theme" uid="uid://cfvox1slj653" path="res://main_theme.tres" id="12_03edq"]
+[ext_resource type="Script" uid="uid://cx10efwml66eu" path="res://scenes/ui/red_flash.gd" id="14_6ni85"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8pxvv"]
 size = Vector2(256, 100)
@@ -89,5 +90,22 @@ grow_horizontal = 0
 grow_vertical = 0
 theme = ExtResource("12_03edq")
 text = "End Turn"
+
+[node name="RedFlash" type="CanvasLayer" parent="." unique_id=388808648]
+layer = 2
+script = ExtResource("14_6ni85")
+
+[node name="ColorRect" type="ColorRect" parent="RedFlash" unique_id=323707110]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 0.44313726, 0.44313726, 0)
+
+[node name="Timer" type="Timer" parent="RedFlash" unique_id=330659766]
+wait_time = 0.1
+one_shot = true
 
 [connection signal="child_order_changed" from="EnemyHandler" to="." method="_on_enemy_handler_child_order_changed"]
